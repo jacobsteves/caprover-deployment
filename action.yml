@@ -1,0 +1,26 @@
+name: 'CapRover Deploy'
+description: 'Action to deploy on Caprover server'
+author: 'Jacob Steves'
+branding:
+  icon: upload-cloud
+  color: blue
+inputs:
+  server:
+    description: 'CapRover admin panel URL (Example: https://captain.root.domain.com)'
+    required: true
+  password:
+    description: 'CapRover admin password. Use GitHub Secrets ($\{{ secrets.CAPROVER_PASSWORD }}) for better security.'
+    required: true
+  appname:
+    description: 'App on the CapRover server that you want to deploy to.'
+    required: true
+  branch:
+    description: 'Git branch which will be deployed onto the app.'
+    required: false
+    default: 'master'
+  tarball:
+    description: 'Tarball which will be deployed onto the app.'
+    required: false
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
