@@ -1,8 +1,8 @@
 #!/bin/bash
 
-if [ -z ${INPUT_TARBALL+x} ]; then
+if [ -n $INPUT_TARBALL ]; then
   caprover deploy -h $INPUT_SERVER -p $INPUT_PASSWORD -a $INPUT_APPNAME -t $INPUT_TARBALL
-elif [ -z ${INPUT_BRANCH+x} ]; then
+elif [ -n $INPUT_BRANCH ]; then
   caprover deploy -h $INPUT_SERVER -p $INPUT_PASSWORD -a $INPUT_APPNAME -b $INPUT_BRANCH
 else
   echo "Invalid input. Either a tarball or a branch argument is required."
