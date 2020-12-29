@@ -1,4 +1,4 @@
-name: 'CapRover Deploy'
+name: 'CapRover Deployment'
 description: 'Action to deploy on Caprover server'
 author: 'Jacob Steves'
 branding:
